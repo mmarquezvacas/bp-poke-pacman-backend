@@ -34,4 +34,10 @@ public class PokemonServiceImpl implements PokemonService {
 		this.pokemonRepository.changePokemonStatus(pokid, pokState);
 	}
 
+	@Override
+	public List<PokemonEntity> findByState(String pokState) {
+
+		return this.pokemonRepository.findByState(pokState);
+	}
+
 }

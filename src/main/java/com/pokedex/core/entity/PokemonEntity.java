@@ -1,8 +1,12 @@
 package com.pokedex.core.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity(name = "pokemon")
 public class PokemonEntity {
@@ -28,6 +32,9 @@ public class PokemonEntity {
 
 	@Column(name = "pokstate")
 	public String state;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pokemon")
+	private List<PokemonSkillEntity> pokemonSkillEntitys;
 
 	public Integer getId() {
 		return id;

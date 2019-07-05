@@ -11,4 +11,6 @@ public interface PokemonService {
 	List<PokemonEntity> list();
 
 	void changePokemonStatus(@Param("pokid") Integer pokid, @Param("pokState") String pokState);
+
+	List<PokemonEntity> findByState(@Param("pokState") String pokState);
 }

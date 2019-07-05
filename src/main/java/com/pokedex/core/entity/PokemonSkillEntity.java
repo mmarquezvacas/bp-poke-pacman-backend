@@ -3,6 +3,8 @@ package com.pokedex.core.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "pokemonskills")
 public class PokemonSkillEntity {
@@ -10,9 +12,9 @@ public class PokemonSkillEntity {
 	@Id
 	@Column(name = "posid")
 	private Integer pokemonSkillId;
-	
-	@Column(name = "pokid")
-	private Integer pokemonId;
+
+//	@Column(name = "pokid")
+//	private Integer pokemonId;
 
 	@Column(name = "skiid")
 	private Integer skillId;
@@ -20,19 +22,9 @@ public class PokemonSkillEntity {
 	@Column(name = "pospower")
 	private Integer pospower;
 
-	/**
-	 * @return the pokemonId
-	 */
-	public Integer getPokemonId() {
-		return pokemonId;
-	}
-
-	/**
-	 * @param pokemonId the pokemonId to set
-	 */
-	public void setPokemonId(Integer pokemonId) {
-		this.pokemonId = pokemonId;
-	}
+	@ManyToOne
+	@JoinColumn(name = "pokid")
+	private PokemonEntity pokemon;
 
 	/**
 	 * @return the skillId
@@ -74,6 +66,20 @@ public class PokemonSkillEntity {
 	 */
 	public void setPospower(Integer pospower) {
 		this.pospower = pospower;
+	}
+
+	/**
+	 * @return the pokemon
+	 */
+	public PokemonEntity getPokemon() {
+		return pokemon;
+	}
+
+	/**
+	 * @param pokemon the pokemon to set
+	 */
+	public void setPokemon(PokemonEntity pokemon) {
+		this.pokemon = pokemon;
 	}
 
 }

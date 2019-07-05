@@ -39,6 +39,10 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       #sonar
+      #make gradlew executable
+      - run:
+          name: chmod permissions for gradlew
+          command: chmod +x ./gradlew
       - run: ./gradlew sonarqube \
           -Dsonar.projectKey=mmarquezvacas_bp-poke-pacman-backend \
           -Dsonar.organization=mmarquezvacas-github \

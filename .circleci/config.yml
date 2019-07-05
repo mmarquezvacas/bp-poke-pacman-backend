@@ -50,4 +50,4 @@ jobs:
           name: copiar certificado de AWS
           command: echo $AWS_PEM > ~/KP_PRODUCCION.pem
       - run: scp -i ~/KP_PRODUCCION.pem build/libs/bp-poke-pacman-backend-0.0.1-SNAPSHOT.jar ec2-user@34.238.43.179:~
-        #
+        ##

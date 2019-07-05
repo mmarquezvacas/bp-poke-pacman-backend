@@ -30,15 +30,16 @@ public class PokemonEntity {
 	public String state;
 	
 	@Column(name = "poktipo")
-	public String tipo;
+	public String type;
 
-	
-	public String getTipo() {
-		return tipo;
+
+
+	public String getType() {
+		return type;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Integer getId() {

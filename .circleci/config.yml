@@ -41,12 +41,12 @@ jobs:
       # run tests!
       #- run: gradle test
   sonar:
-    - # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+    # Download and cache dependencies
+    - restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "build.gradle" }}
+          # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
     - run: ./gradlew sonarqube \
         -Dsonar.projectKey=mmarquezvacas_bp-poke-pacman-backend \
         -Dsonar.organization=mmarquezvacas-github \

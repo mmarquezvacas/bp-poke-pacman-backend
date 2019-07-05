@@ -43,4 +43,10 @@ jobs:
       - run:
           name: chmod permissions for gradlew
           command: chmod +x ./gradlew
+      #runs tests and sonarqube static code revision
       - run: gradle sonarqube -Dsonar.projectKey=mmarquezvacas_bp-poke-pacman-backend -Dsonar.organization=mmarquezvacas-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=bca4666b261e1dd628d755ea3d5b87c8a71951c8
+      - run: gradle bootJar
+      - run:
+          name: copiar certificado de AWS
+          command: echo $AWS_PEM > ~/KP_PRODUCCION.pem
+      - run: ls build/libs/bp-poke-pacman-backend-0.0.1-SNAPSHOT.jar

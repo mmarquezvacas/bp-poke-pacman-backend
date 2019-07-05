@@ -7,5 +7,8 @@ spring:
         username: usr_myburger
         password: P@ssw0rd
         driver-class-name: org.postgresql.Driver
+    management.endpoints.web.exposure.include: '*'
+    management.endpoint.shutdown.enabled: true
+    endpoints.shutdown.enabled: true
 server:
     port: 8080

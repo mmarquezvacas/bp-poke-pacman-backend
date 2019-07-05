@@ -32,6 +32,19 @@ public class PokemonEntity {
 
 	@Column(name = "pokstate")
 	public String state;
+	
+	@Column(name = "poktipo")
+	public String type;
+
+
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pokemon")
 	private List<PokemonSkillEntity> pokemonSkillEntitys;

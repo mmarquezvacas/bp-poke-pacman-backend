@@ -28,6 +28,18 @@ public class PokemonEntity {
 
 	@Column(name = "pokstate")
 	public String state;
+	
+	@Column(name = "poktipo")
+	public String tipo;
+
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public Integer getId() {
 		return id;

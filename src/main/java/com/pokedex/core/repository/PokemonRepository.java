@@ -1,5 +1,9 @@
 package com.pokedex.core.repository;
 
-public interface PokemonRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pokedex.core.entity.PokemonEntity;
+
+public interface PokemonRepository extends JpaRepository<PokemonEntity, Integer> {
 
 }

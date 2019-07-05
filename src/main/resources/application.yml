@@ -1,1 +1,11 @@
-
+spring:
+    jpa:
+        database: POSTGRESQL
+        show-sql: true
+    datasource:
+        url: jdbc:postgresql://thingstek.chfgzgu7ocjr.us-east-1.rds.amazonaws.com:5432/db_my_burger
+        username: usr_myburger
+        password: P@ssw0rd
+        driver-class-name: org.postgresql.Driver
+server:
+    port: 8080

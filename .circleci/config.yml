@@ -39,4 +39,16 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: gradle test
+      #- run: gradle test
+  sonar:
+    # Download and cache dependencies
+    - restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "build.gradle" }}
+          # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+    - run: ./gradlew sonarqube \
+        -Dsonar.projectKey=mmarquezvacas_bp-poke-pacman-backend \
+        -Dsonar.organization=mmarquezvacas-github \
+        -Dsonar.host.url=https://sonarcloud.io \
+        -Dsonar.login=bca4666b261e1dd628d755ea3d5b87c8a71951c8
